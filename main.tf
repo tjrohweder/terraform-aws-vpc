@@ -18,9 +18,7 @@ resource "aws_subnet" "private" {
   cidr_block        = cidrsubnet(var.vpc_cidr, 4, count.index + 1)
 
   tags = {
-    Name                                        = "private-subnet-${count.index + 1}"
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb"           = "1"
+    Name = "private-subnet-${count.index + 1}"
   }
 }
 
@@ -32,9 +30,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name                                        = "public-subnet-${count.index + 1}"
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/elb"                    = "1"
+    Name = "public-subnet-${count.index + 1}"
   }
 }
 
