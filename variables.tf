@@ -12,7 +12,3 @@ variable "nat_count" {
   description = "Number of NAT Gateways. For best HA, each NAT Gateway will be created in a different AZ"
   default     = ""
 }
-
-variable "cluster_name" {}
-variable "aws_region" {}
-variable "environment" {}
